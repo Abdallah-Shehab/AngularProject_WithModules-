@@ -1,0 +1,40 @@
+<div class="container-fluid mt-5">
+  <div class="row justify-content-center align-items-center g-2">
+    <mat-form-field class="example-form-field w-50">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="value"
+        (input)="search()"
+        placeholder="Search"
+      />
+      @if (value) {
+      <button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon>search</mat-icon>
+      </button>
+      }
+    </mat-form-field>
+  </div>
+  <div class="row justify-content-around align-items-center text-center g-2">
+    <div class="col-md-5"></div>
+    <div class="col-md-6">
+      <mat-chip-set aria-label="Fish selection">
+        <mat-chip (click)="Filter('')">All</mat-chip>
+        <mat-chip (click)="Filter('ps')">PS-5</mat-chip>
+        <mat-chip (click)="Filter('pc')">PC</mat-chip>
+      </mat-chip-set>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <app-products
+        *ngFor="let item of Products"
+        [product]="item"
+      ></app-products>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

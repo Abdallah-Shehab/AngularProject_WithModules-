@@ -1,0 +1,17 @@
+<div
+  class="d-flex justify-content-center align-content-center m-3"
+  style="width: 400px; height: 300px"
+>
+  <div>
+    <img src="{{ product.image }}" alt="" />
+  </div>
+  <div style="width: 30px"></div>
+  <div>
+    <h4>{{ product.name }}</h4>
+
+    <br />
+    <p>{{ product.price | currency : " EGP " }}</p>
+    <p>Category : {{ product.category }}</p>
+    <button mat-stroked-button color="accent">Add To Product</button>
+  </div>
+</div>
